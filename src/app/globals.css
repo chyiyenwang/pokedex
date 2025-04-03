@@ -4,6 +4,8 @@
   --background: #ffffff;
   --foreground: #171717;
   --yellow: #ffd65a;
+  --red: #f4523b;
+  --gray: #f2f2f2;
   --normal: #A8A77A;
   --fire: #EE8130;
   --water: #6390F0;
@@ -28,6 +30,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-poke-yellow: var(--yellow);
+  --color-poke-red: var(--red);
+  --color-poke-gray: var(--gray);
   --color-normal: var(--normal);
   --color-fire: var(--fire);
   --color-water: var(--water);
