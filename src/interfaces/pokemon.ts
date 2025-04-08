@@ -4,7 +4,14 @@ import {
   PokemonMove,
   Sprites,
   PokemonStat,
+  Attributes,
+  Multipliers,
 } from '@/interfaces';
+
+export type ElementType =
+  | 'water' | 'fire' | 'electric' | 'normal' | 'grass' | 'ice'
+  | 'fighting' | 'poison' | 'ground' | 'flying' | 'psychic'
+  | 'bug' | 'rock' | 'ghost' | 'dragon' | 'dark' | 'steel' | 'fairy';
 
 export interface Pokemon {
   abilities: PokemonAbility[];
@@ -30,15 +37,23 @@ export interface Pokemon {
 }
 
 export interface PokemonModel {
+  id: number;
   name: string;
   officialImage: string;
   abilities: PokemonAbility[];
   stats: PokemonStat[];
-  hp: PokemonStat;
+  attributes: Attributes;
+  types: Multipliers;
   elementType: string;
-  gradient: string;
+  colors: Colors;
   sprite: string;
   animatedSprite: string;
+}
+
+export interface Colors {
+  bgGradient: string;
+  textColor: string;
+  bgColor: string;
 }
 
 export interface PokemonType {

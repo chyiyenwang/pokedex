@@ -21,3 +21,17 @@ export interface ElementTypes {
     defense: EffectivenessType;
   };
 }
+
+export interface Attributes {
+  weight: number;
+  height: number;
+}
+
+export interface Multipliers {
+  defense: {
+    [type: string]: number;
+  },
+  attack: {
+    [type: string]: number;
+  }
+};

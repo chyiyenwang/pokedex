@@ -1,103 +1,67 @@
-import Image from "next/image";
+'use client';
+
+import squirtle from '@/data/pokemon/squirtle';
+import charmander from '@/data/pokemon/charmander';
+import bulbasaur from '@/data/pokemon/bulbasaur';
+import pikachu from '@/data/pokemon/pikachu';
+import growlithe from '@/data/pokemon/growlithe';
+import PokeCard from '@/components/pokecard';
+import { Pokemon, PokemonStat, PokemonAbility, PokemonModel, Attributes, ElementType } from '@/interfaces';
+import getMultipliers from '@/helpers/getMultipliers';
+import { getElementTypeClasses } from '@/theme/elementStyles';
+
+function createPokemonModel(pokemon: Pokemon): PokemonModel {
+  const id = pokemon.id;
+  const name = pokemon.name;
+  const officialImage: string = pokemon.sprites.other['official-artwork'].front_default;
+  // const hp: PokemonStat = pokemon.stats.find((stat) => stat.stat.name === 'hp') as PokemonStat;
+  const stats: PokemonStat[] = pokemon.stats;
+  const elementType: ElementType = pokemon.types[0].type.name as ElementType;
+  const abilities: PokemonAbility[] = pokemon.abilities;
+  // TODO: update this
+  const types = getMultipliers(['water'])
+  const attributes: Attributes = {
+    weight: pokemon.weight,
+    height: pokemon.height,
+  };
+  // const gradient = `bg-gradient-to-br from-${elementType} via-[#eeeeee] to-${elementType}`
+  // const gradient = `bg-conic from-blue-600 to-sky-400 to-50%`
+  const animatedSprite: string = pokemon.sprites.versions['generation-v']['black-white']?.animated?.front_default ?? "default_sprite.png";
+  const sprite: string = pokemon.sprites.versions['generation-v']['black-white'].front_default;
+  // const sprite: string = pokemon.sprites.versions['generation-iv']['platinum'].front_default;
+  
+  // const colors = elementTypeMap[elementType];
+  // const type = elementType;
+  const colors = getElementTypeClasses(elementType);
+  return {
+    id,
+    name,
+    officialImage,
+    abilities,
+    // hp,
+    attributes,
+    stats,
+    types,
+    elementType,
+    colors,
+    sprite,
+    animatedSprite,
+  }
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // @source inline("{bg-,text-,border-,hover:bg-,ring-,focus:ring-}(water,fire,electric,normal,grass,ice,fighting,poison,ground,flying,psychic,bug,rock,ghost,dragon,dark,steel,fairy)")
+  const pikachuData = createPokemonModel(pikachu);
+  const growlitheData = createPokemonModel(growlithe);
+  const squirtleData = createPokemonModel(squirtle);
+  const charmanderData = createPokemonModel(charmander);
+  const bulbasaurData = createPokemonModel(bulbasaur);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  return (
+    <div className='flex overflow justify-center items-center h-screen'>
+      <PokeCard pokemon={squirtleData} />
+      <PokeCard pokemon={charmanderData} />
+      <PokeCard pokemon={bulbasaurData} />
     </div>
   );
 }
