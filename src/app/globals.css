@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #bdf1af;
+  --secondary: #ffe3e9;
   --yellow: #ffd65a;
   --red: #f4523b;
   --gray: #f2f2f2;
@@ -31,6 +33,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --color-poke-yellow: var(--yellow);
   --color-poke-red: var(--red);
   --color-poke-gray: var(--gray);
@@ -64,7 +68,7 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

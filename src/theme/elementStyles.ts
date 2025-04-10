@@ -1,4 +1,7 @@
-import { ElementType } from '@/interfaces';
+import {
+  Colors,
+  ElementType
+} from '@/interfaces';
 // TODO: figure out a way to create dynamic classes
 // const blackTextTypes: ElementType[] = [
 //   'normal', 'grass', 'ice', 'rock', 'bug', 'ground', 'steel', 'fairy',
@@ -200,6 +203,12 @@ const elementTypeClasses = {
   },
 };
 
-export function getElementTypeClasses(type: ElementType) {
-  return elementTypeClasses[type];
-}
+export function getElementTypeClasses(types: ElementType[]) {
+  const classes: Colors = {};
+
+  types.forEach(type => {
+    classes[type] = elementTypeClasses[type];
+  });
+
+  return classes;
+};

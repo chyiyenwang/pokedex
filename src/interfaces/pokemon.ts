@@ -5,7 +5,6 @@ import {
   Sprites,
   PokemonStat,
   Attributes,
-  Multipliers,
 } from '@/interfaces';
 
 export type ElementType =
@@ -43,18 +42,18 @@ export interface PokemonModel {
   abilities: PokemonAbility[];
   stats: PokemonStat[];
   attributes: Attributes;
-  types: Multipliers;
-  elementType: string;
-  colors: Colors;
+  types: ElementType[];
+  weaknesses: ElementType[];
+  theme: Colors;
   sprite: string;
   animatedSprite: string;
 }
 
-export interface Colors {
-  bgGradient: string;
-  textColor: string;
-  bgColor: string;
-}
+export type Colors = {
+  [key in ElementType]?: {
+    [colorTheme: string]: string;
+  };
+};
 
 export interface PokemonType {
   slot: number;

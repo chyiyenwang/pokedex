@@ -16,7 +16,7 @@ export interface EffectivenessType {
 }
 
 export interface ElementTypes {
-  [element: string]: {
+  [type: string]: {
     attack: EffectivenessType;
     defense: EffectivenessType;
   };
@@ -28,10 +28,5 @@ export interface Attributes {
 }
 
 export interface Multipliers {
-  defense: {
-    [type: string]: number;
-  },
-  attack: {
-    [type: string]: number;
-  }
+  [type: string]: number;
 };
