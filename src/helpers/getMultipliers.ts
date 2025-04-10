@@ -1,6 +1,7 @@
-import { TYPES } from '@/data/pokemon';
-import { Multipliers } from '@/interfaces';
+// https://github.com/Naramsim/Colosseum/blob/master/src/scripts/helpers/getMultipliers.js
 
+import { TYPES } from '@/data/pokemon';
+import { Multipliers } from '@/models/types';
 
 export default function getMultipliers(types: string[]) {
   var multipliers: Multipliers = {

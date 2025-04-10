@@ -1,7 +1,7 @@
 import {
   Colors,
   ElementType
-} from '@/interfaces';
+} from '@/models/types';
 // TODO: figure out a way to create dynamic classes
 // const blackTextTypes: ElementType[] = [
 //   'normal', 'grass', 'ice', 'rock', 'bug', 'ground', 'steel', 'fairy',

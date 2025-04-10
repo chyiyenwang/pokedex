@@ -1,4 +1,4 @@
-import { PokemonModel, PokemonStat } from '@/interfaces';
+import { PokemonModel, PokemonStat } from '@/models/types';
 import {
   Card,
   CardHeader,
@@ -6,7 +6,6 @@ import {
 } from '@heroui/react';
 import Avatar from '@/components/avatar';
 import Hero from '@/components/hero';
-import Pill from '@/components/pill';
 import PillList from './pill-list';
 
 interface PokeCardProps {

@@ -1,26 +1,26 @@
-export interface Move {
+export type Move = {
   name: string;
   url: string;
 }
 
-export interface MoveLearnMethod {
+export type MoveLearnMethod = {
   name: string;
   url: string;
 }
 
-export interface VersionGroup {
+export type VersionGroup = {
   name: string;
   url: string;
 }
 
-export interface VersionGroupDetail {
+export type VersionGroupDetail = {
   level_learned_at: number;
   move_learn_method: MoveLearnMethod;
   order: number | null;
   version_group: VersionGroup;
 }
 
-export interface PokemonMove {
+export type PokemonMove = {
   move: Move;
   version_group_details: VersionGroupDetail[];
 }

@@ -1,4 +1,4 @@
-export interface SpriteSet {
+export type SpriteSet = {
   front_default: string;
   front_female?: string | null;
   front_shiny?: string;
@@ -9,14 +9,14 @@ export interface SpriteSet {
   back_shiny_female?: string | null;
 }
 
-export interface OtherSprites {
+export type OtherSprites = {
   dream_world: SpriteSet;
   home: SpriteSet;
   "official-artwork": SpriteSet;
   showdown: SpriteSet;
 }
 
-export interface Versions {
+export type Versions = {
   [generation: string]: {
     [game: string]: SpriteSet & {
       animated?: SpriteSet;
@@ -24,7 +24,7 @@ export interface Versions {
   };
 }
 
-export interface Sprites extends SpriteSet {
+export type Sprites = SpriteSet & {
   other: OtherSprites;
   versions: Versions;
 }

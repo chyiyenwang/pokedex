@@ -6,7 +6,15 @@ import bulbasaur from '@/data/pokemon/bulbasaur';
 import pikachu from '@/data/pokemon/pikachu';
 import growlithe from '@/data/pokemon/growlithe';
 import PokeCard from '@/components/pokecard';
-import { Pokemon, PokemonStat, PokemonAbility, PokemonModel, Attributes, ElementType, Colors } from '@/interfaces';
+import {
+  Pokemon,
+  PokemonStat,
+  PokemonAbility,
+  PokemonModel,
+  Attributes,
+  ElementType,
+  Colors
+} from '@/models/types';
 import getMultipliers from '@/helpers/getMultipliers';
 import getWeaknesses from '@/helpers/getWeaknesses';
 import { getElementTypeClasses } from '@/theme/elementStyles';

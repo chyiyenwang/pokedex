@@ -1,5 +1,5 @@
 import Pill from '@/components/pill';
-import { Colors, ElementType } from '@/interfaces';
+import { Colors, ElementType } from '@/models/types';
 
 interface PillListProps {
   list: ElementType[];

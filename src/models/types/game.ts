@@ -1,9 +1,9 @@
-export interface Version {
+export type Version = {
   name: string;
   url: string;
 }
 
-export interface GameIndex {
+export type GameIndex = {
   game_index: number;
   version: Version;
 }

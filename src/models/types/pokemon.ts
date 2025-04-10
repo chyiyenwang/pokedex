@@ -5,14 +5,14 @@ import {
   Sprites,
   PokemonStat,
   Attributes,
-} from '@/interfaces';
+} from '@/models/types';
 
 export type ElementType =
   | 'water' | 'fire' | 'electric' | 'normal' | 'grass' | 'ice'
   | 'fighting' | 'poison' | 'ground' | 'flying' | 'psychic'
   | 'bug' | 'rock' | 'ghost' | 'dragon' | 'dark' | 'steel' | 'fairy';
 
-export interface Pokemon {
+export type Pokemon = {
   abilities: PokemonAbility[];
   base_experience: number;
   cries: Cry;
@@ -35,7 +35,7 @@ export interface Pokemon {
   weight: number;
 }
 
-export interface PokemonModel {
+export type PokemonModel = {
   id: number;
   name: string;
   officialImage: string;
@@ -55,27 +55,27 @@ export type Colors = {
   };
 };
 
-export interface PokemonType {
+export type PokemonType = {
   slot: number;
   type: Type;
 }
 
-export interface Type {
+export type Type = {
   name: string;
   url: string;
 }
 
-export interface Species {
+export type Species = {
   name: string;
   url: string;
 }
 
-export interface Form {
+export type Form = {
   name: string;
   url: string;
 }
 
-export interface Cry {
+export type Cry = {
   latest: string;
   legacy: string;
 }

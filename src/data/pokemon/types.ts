@@ -1,4 +1,4 @@
-import { ElementTypes } from '@/interfaces';
+import { ElementTypes } from '@/models/types';
 
 export const TYPES: ElementTypes = {
   "bug": {
