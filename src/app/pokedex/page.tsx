@@ -54,7 +54,7 @@ function createPokemonModel(pokemon: Pokemon): PokemonModel {
   }
 }
 
-export default function PokemonPage() {
+export default function PokedexPage() {
   // const pikachuData = createPokemonModel(pikachu);
   // const growlitheData = createPokemonModel(growlithe);
   // const squirtleData = createPokemonModel(squirtle);
