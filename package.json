@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@heroui/react": "^2.7.5",
+    "@prisma/client": "^6.6.0",
     "clsx": "^2.1.1",
     "motion": "^12.6.2",
     "next": "15.2.2",
     "pokemon-sprites": "file:../pokemon-sprites",
+    "prisma": "^6.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.1.3"
