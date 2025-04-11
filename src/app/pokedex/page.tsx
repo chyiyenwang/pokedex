@@ -15,7 +15,6 @@ import {
   ElementType,
   Colors
 } from '@/models/types';
-import getMultipliers from '@/helpers/getMultipliers';
 import getWeaknesses from '@/helpers/getWeaknesses';
 import { getElementTypeClasses } from '@/theme/elementStyles';
 import { POKEMON_LIST } from '@/data/pokemon';
